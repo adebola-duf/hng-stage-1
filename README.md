@@ -2,7 +2,7 @@
 
 
 ## Appetize Demo
-[Demo Link]([https://flutter.dev/docs/get-started/install](https://appetize.io/app/zxl5j6sxuspyecuorq2skobxhu?device=pixel7&osVersion=13.0))
+[Demo Link](https://appetize.io/app/zxl5j6sxuspyecuorq2skobxhu?device=pixel7&osVersion=13.0)
 
 ## Screenshots
 ![ss1](assets/screenshots/ss-1.jpg)
