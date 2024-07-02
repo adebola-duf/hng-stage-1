@@ -1,5 +1,9 @@
 # Shoe E-commerce App - HNG Internship Stage 1
 
+
+## Appetize Demo
+[Demo Link](https://flutter.dev/docs/get-started/install)
+
 ## Screenshots
 ![ss1](assets/screenshots/ss-1.jpg)
 ![ss2](assets/screenshots/ss-2.jpg)

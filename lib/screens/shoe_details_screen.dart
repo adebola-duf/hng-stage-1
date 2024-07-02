@@ -46,169 +46,166 @@ class ShoeDetailsScreen extends StatelessWidget {
             SizedBox(
               height: MediaQuery.sizeOf(context).height,
               width: MediaQuery.sizeOf(context).width,
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 10),
-                    GestureDetector(
-                      onTap: () => Navigator.of(context).pop(),
-                      child: Container(
-                        height: 50,
-                        width: 45,
-                        margin: const EdgeInsets.only(left: 12.0),
-                        decoration: BoxDecoration(
-                          border: Border.all(width: 2),
-                          borderRadius: BorderRadius.circular(17),
-                        ),
-                        child: const Icon(Icons.arrow_back_ios_new_rounded),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 10),
+                  GestureDetector(
+                    onTap: () => Navigator.of(context).pop(),
+                    child: Container(
+                      height: 50,
+                      width: 45,
+                      margin: const EdgeInsets.only(left: 12.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(width: 2),
+                        borderRadius: BorderRadius.circular(17),
+                      ),
+                      child: const Icon(Icons.arrow_back_ios_new_rounded),
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        shoe.name,
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
+                    ],
+                  ),
+                  Center(
+                    child: Hero(
+                      tag: shoe.name,
+                      child: SizedBox(
+                        height: 180,
+                        width: 180,
+                        child: shoe.needsRotation
+                            ? Transform(
+                                alignment: FractionalOffset.center,
+                                transform: Matrix4.rotationZ(
+                                  -3.1415926535897932 / 4,
+                                ),
+                                child: Image.asset(shoe.imagePath),
+                              )
+                            : Image.asset(shoe.imagePath),
                       ),
                     ),
-                    const SizedBox(height: 10),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          shoe.name,
-                          style: const TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20),
-                        ),
-                      ],
-                    ),
-                    Center(
-                      child: Hero(
-                        tag: shoe.name,
-                        child: SizedBox(
-                          height: 180,
-                          width: 180,
-                          child: shoe.needsRotation
-                              ? Transform(
-                                  alignment: FractionalOffset.center,
-                                  transform: Matrix4.rotationZ(
-                                    -3.1415926535897932 / 4,
-                                  ),
-                                  child: Image.asset(shoe.imagePath),
-                                )
-                              : Image.asset(shoe.imagePath),
-                        ),
-                      ),
-                    ),
-                    Stack(
-                      children: [
-                        Container(
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.vertical(
-                              bottom: Radius.circular(20),
-                            ),
-                            color: Colors.black,
+                  ),
+                  Stack(
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.vertical(
+                            bottom: Radius.circular(20),
                           ),
-                          child: Column(
-                            children: [
-                              const SizedBox(height: 20),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  shoe.description,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    color: _makeColorLighter(shoe.color, 80),
+                          color: Colors.black,
+                        ),
+                        child: Column(
+                          children: [
+                            const SizedBox(height: 20),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                shoe.description,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: _makeColorLighter(shoe.color, 80),
 
-                                    fontSize: 17,
-                                    // fontWeight: FontWeight.bold,
-                                  ),
+                                  fontSize: 17,
+                                  // fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              //       Container(
-                              //         height: 50,
-                              //         clipBehavior: Clip.hardEdge,
-                              //         decoration: BoxDecoration(
-                              //           borderRadius: BorderRadius.circular(45),
-                              //         ),
-                              //         margin: const EdgeInsets.only(
-                              //             left: 14, right: 14, bottom: 14),
-                              //         child: ListView(
-                              //           scrollDirection: Axis.horizontal,
-                              //           children: [
-                              //             for (final size in sizes)
-                              //               Center(
-                              //                 child: Container(
-                              //                   decoration: BoxDecoration(
-                              //                     color: _makeColorLighter(
-                              //                         shoe.color, 60),
-                              //                     borderRadius:
-                              //                         BorderRadius.circular(45),
-                              //                   ),
-                              //                   margin: const EdgeInsets.only(
-                              //                       right: 14.0),
-                              //                   child: Padding(
-                              //                     padding: const EdgeInsets.symmetric(
-                              //                         vertical: 8.0,
-                              //                         horizontal: 25.0),
-                              //                     child: Text(
-                              //                       size.toString(),
-                              //                     ),
-                              //                   ),
-                              //                 ),
-                              //               ),
-                              //           ],
-                              //         ),
-                              //       ),
+                            ),
+                            //       Container(
+                            //         height: 50,
+                            //         clipBehavior: Clip.hardEdge,
+                            //         decoration: BoxDecoration(
+                            //           borderRadius: BorderRadius.circular(45),
+                            //         ),
+                            //         margin: const EdgeInsets.only(
+                            //             left: 14, right: 14, bottom: 14),
+                            //         child: ListView(
+                            //           scrollDirection: Axis.horizontal,
+                            //           children: [
+                            //             for (final size in sizes)
+                            //               Center(
+                            //                 child: Container(
+                            //                   decoration: BoxDecoration(
+                            //                     color: _makeColorLighter(
+                            //                         shoe.color, 60),
+                            //                     borderRadius:
+                            //                         BorderRadius.circular(45),
+                            //                   ),
+                            //                   margin: const EdgeInsets.only(
+                            //                       right: 14.0),
+                            //                   child: Padding(
+                            //                     padding: const EdgeInsets.symmetric(
+                            //                         vertical: 8.0,
+                            //                         horizontal: 25.0),
+                            //                     child: Text(
+                            //                       size.toString(),
+                            //                     ),
+                            //                   ),
+                            //                 ),
+                            //               ),
+                            //           ],
+                            //         ),
+                            //       ),
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                        top: 0,
+                        child: Container(
+                          height: 20,
+                          width: MediaQuery.sizeOf(context).width,
+                          decoration: BoxDecoration(
+                            color: shoe.color,
+                            borderRadius: const BorderRadius.vertical(
+                              bottom: Radius.circular(20),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 14.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'PRICE',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        RichText(
+                          text: TextSpan(
+                            text: shoe.price[0],
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: shoe.price.substring(1),
+                                style: const TextStyle(
+                                  fontSize: 23,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ],
                           ),
                         ),
-                        Positioned(
-                          top: 0,
-                          child: Container(
-                            height: 20,
-                            width: MediaQuery.sizeOf(context).width,
-                            decoration: BoxDecoration(
-                              color: shoe.color,
-                              borderRadius: const BorderRadius.vertical(
-                                bottom: Radius.circular(20),
-                              ),
-                            ),
-                          ),
-                        )
                       ],
                     ),
-                    const SizedBox(height: 10),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 14.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'PRICE',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          RichText(
-                            text: TextSpan(
-                              text: shoe.price[0],
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[
-                                TextSpan(
-                                  text: shoe.price.substring(1),
-                                  style: const TextStyle(
-                                    fontSize: 23,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    AddToCartComponent(
-                      addToCart: addToCart,
-                      shoe: shoe,
-                      noOfThisShoeInCart: noOfThisShoeInCart,
-                      removeFromCart: removeFromCart,
-                    ),
-                  ],
-                ),
+                  ),
+                  const Spacer(),
+                  AddToCartComponent(
+                    addToCart: addToCart,
+                    shoe: shoe,
+                    noOfThisShoeInCart: noOfThisShoeInCart,
+                    removeFromCart: removeFromCart,
+                  ),
+                ],
               ),
             ),
           ],

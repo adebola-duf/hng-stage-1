@@ -56,6 +56,7 @@ class _PayBottomSheetState extends State<PayBottomSheet> {
                     TextSpan(
                       text: widget.total.toString(),
                       style: const TextStyle(
+                        color: Colors.black,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
@@ -71,6 +72,7 @@ class _PayBottomSheetState extends State<PayBottomSheet> {
             height: 55,
             child: ElevatedButton(
               onPressed: () {
+                widget.clearCart();
                 Navigator.of(context).pop();
                 Navigator.of(context).push(
                   MaterialPageRoute(
