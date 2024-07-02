@@ -51,7 +51,10 @@ class _PayBottomSheetState extends State<PayBottomSheet> {
                 text: TextSpan(
                   text: '₦',
                   style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 10),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 10,
+                    color: Colors.black,
+                  ),
                   children: <TextSpan>[
                     TextSpan(
                       text: widget.total.toString(),
@@ -72,13 +75,13 @@ class _PayBottomSheetState extends State<PayBottomSheet> {
             height: 55,
             child: ElevatedButton(
               onPressed: () {
-                widget.clearCart();
                 Navigator.of(context).pop();
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => const OrderSuccessScreen(),
                   ),
                 );
+                widget.clearCart();
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,

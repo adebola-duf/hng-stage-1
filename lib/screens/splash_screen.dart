@@ -19,6 +19,7 @@ class SplashScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const SizedBox(height: 10),
                 Wrap(
                   children: [
                     Image.asset(

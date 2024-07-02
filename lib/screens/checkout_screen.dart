@@ -82,6 +82,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 child: const Icon(Icons.arrow_back_ios_new_rounded),
               ),
             ),
+            const SizedBox(height: 10),
             Expanded(
               child: widget.cartMap.isEmpty
                   ? const Center(
@@ -129,6 +130,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
+                          color: Colors.black,
                         ),
                         children: <TextSpan>[
                           const TextSpan(
@@ -136,6 +138,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             style: TextStyle(
                               fontSize: 13,
                               fontWeight: FontWeight.bold,
+                              color: Colors.black,
                             ),
                           ),
                           TextSpan(
@@ -143,6 +146,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
+                              color: Colors.black,
                             ),
                           ),
                         ],
