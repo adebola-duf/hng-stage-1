@@ -6,16 +6,27 @@ class ShoeCard extends StatelessWidget {
   const ShoeCard({
     super.key,
     required this.shoe,
+    required this.addToCart,
+    required this.removeFromCart,
+    required this.noOfThisShoeInCart,
   });
 
   final Shoe shoe;
+  final void Function(Shoe shoe) addToCart;
+  final void Function(Shoe shoe) removeFromCart;
+  final int noOfThisShoeInCart;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => ShoeDetailsScreen(shoe: shoe),
+          builder: (context) => ShoeDetailsScreen(
+            shoe: shoe,
+            addToCart: addToCart,
+            removeFromCart: removeFromCart,
+            noOfThisShoeInCart: noOfThisShoeInCart,
+          ),
         ),
       ),
       child: SizedBox(
@@ -47,9 +58,21 @@ class ShoeCard extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Text(
-                          shoe.price,
-                          style: const TextStyle(fontSize: 18),
+                        RichText(
+                          text: TextSpan(
+                            text: shoe.price[0],
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 10),
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: shoe.price.substring(1),
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                         const Spacer(),
                         Container(
@@ -77,18 +100,21 @@ class ShoeCard extends StatelessWidget {
             ),
             Positioned(
               top: -30,
-              child: SizedBox(
-                height: 150,
-                width: 180,
-                child: shoe.needsRotation
-                    ? Transform(
-                        alignment: FractionalOffset.center,
-                        transform: Matrix4.rotationZ(
-                          -3.1415926535897932 / 4,
-                        ),
-                        child: Image.asset(shoe.imagePath),
-                      )
-                    : Image.asset(shoe.imagePath),
+              child: Hero(
+                tag: shoe.name,
+                child: SizedBox(
+                  height: 180,
+                  width: 180,
+                  child: shoe.needsRotation
+                      ? Transform(
+                          alignment: FractionalOffset.center,
+                          transform: Matrix4.rotationZ(
+                            -3.1415926535897932 / 4,
+                          ),
+                          child: Image.asset(shoe.imagePath),
+                        )
+                      : Image.asset(shoe.imagePath),
+                ),
               ),
             ),
           ],

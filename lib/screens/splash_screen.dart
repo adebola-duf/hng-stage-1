@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:myapp/screens/home_screen.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -20,7 +19,7 @@ class SplashScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
+                Wrap(
                   children: [
                     Image.asset(
                       'assets/images/nike-logo.png',

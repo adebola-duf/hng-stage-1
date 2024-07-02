@@ -1,16 +1,44 @@
-# myapp
+# Shoe E-commerce App - HNG Internship Stage 1
 
-A new Flutter project.
+## Screenshots
+![ss1](assets/screenshots/ss-1.jpg)
+![ss2](assets/screenshots/ss-2.jpg)
+![ss3](assets/screenshots/ss-3.jpg)
+![ss4](assets/screenshots/ss-4.jpg)
+![ss5](assets/screenshots/ss-5.jpg)
+![ss6](assets/screenshots/ss-6.jpg)
+![ss7](assets/screenshots/ss-7.jpg)
+![ss8](assets/screenshots/ss-8.jpg)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Instructions to Set Up
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+**Installation:**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. **Ensure you have Flutter SDK installed on your machine. If not, refer to the official Flutter documentation for installation instructions: [Flutter Documentation](https://flutter.dev/docs/get-started/install)**
+
+
+2. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/adebola-duf/hng-stage-1.git
+   ```
+
+3. **Navigate to project directory**
+    ```bash
+    cd hng-stage-1/myapp
+    ```
+4. **Install dependencies using Flutter:**
+    ```bash
+    flutter pub get
+    ```
+
+5. **Run the app on an emulator or a physical device:**
+    ```bash
+    cd hng-stage-1/myapp
+
+## Attribution
+
+The success.jpg used ![hh](assets/images/success.jpg)
+<a href="https://www.flaticon.com/free-icons/done" title="done icons">Done icons created by Smashicons - Flaticon</a>
