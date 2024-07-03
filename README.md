@@ -44,5 +44,6 @@
 
 ## Attribution
 
-The success.jpg used ![hh](assets/images/success.jpg)
-<a href="https://www.flaticon.com/free-icons/done" title="done icons">Done icons created by Smashicons - Flaticon</a>
+1. **The success.jpg used ![success.jpg](assets/images/success.jpg)
+<a href="https://www.flaticon.com/free-icons/done" title="done icons">Done icons created by Smashicons - Flaticon</a>**
+2. **The design this app is based on is by [DSCodetech](https://www.youtube.com/@DSCodetech). Specific Video to follow https://www.youtube.com/watch?v=c8BKlgQ1JjU&t=1716s**
