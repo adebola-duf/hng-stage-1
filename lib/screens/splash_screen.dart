@@ -40,11 +40,11 @@ class SplashScreen extends StatelessWidget {
                   height: 30,
                 ),
                 const Text(
-                  'Naija Pride, Nike Performance',
+                  'Nike Run For Office',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 20,
+                    fontStyle: FontStyle.italic,
+                    fontSize: 30,
                   ),
                 ),
               ],
